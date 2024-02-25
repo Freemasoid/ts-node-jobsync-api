@@ -3,12 +3,12 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "main": "index.js",
+  "main": "./dist/index.js",
   "scripts": {
-    "dev": "vite",
+    "dev": "nodemon index.js",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "start": "nodemon dist/app.js"
+    "start": "node index.js"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
@@ -23,7 +23,8 @@
     "moment": "^2.29.4",
     "mongoose": "^8.0.0",
     "rate-limiter": "^0.2.0",
-    "swagger-ui-express": "^5.0.0"
+    "swagger-ui-express": "^5.0.0",
+    "ts-node-dev": "^2.0.0"
   },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.6",
@@ -31,7 +32,7 @@
     "@types/express": "^4.17.21",
     "@types/jsonwebtoken": "^9.0.5",
     "@types/node": "^20.11.19",
-    "nodemon": "^3.0.1",
+    "nodemon": "^3.1.0",
     "typescript": "^5.2.2",
     "vite": "^5.1.0"
   }
