@@ -1,6 +1,6 @@
-import Job from "../models/Job.ts";
+import Job from "../models/Job";
 import { StatusCodes } from "http-status-codes";
-import { BadRequestError, NotFoundError } from "../errors/custom-errors.ts";
+import { BadRequestError, NotFoundError } from "../errors/custom-errors";
 import moment from "moment";
 import mongoose from "mongoose";
 import { Response, Request } from "express";
@@ -88,14 +88,10 @@ async function updateJob(req: Request, res: Response) {
     throw new BadRequestError("Company or Position fields cannot be empty");
   }
 
-  const job = await Job.findByIdAndUpdate(
-    { _id: jobID, createdBy: userID },
-    req.body,
-    {
-      new: true,
-      runValidators: true,
-    },
-  );
+  const job = await Job.findByIdAndUpdate({ _id: jobID, createdBy: userID }, req.body, {
+    new: true,
+    runValidators: true,
+  });
   if (!job) {
     throw new NotFoundError(`No job with id ${jobID}`);
   }

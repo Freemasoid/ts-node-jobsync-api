@@ -1,4 +1,4 @@
-import { BadRequestError } from "../errors/custom-errors.ts";
+import { BadRequestError } from "../errors/custom-errors";
 import { Request, Response, NextFunction } from "express";
 
 function testUser(req: Request, res: Response, next: NextFunction) {

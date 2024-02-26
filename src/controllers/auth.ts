@@ -1,9 +1,6 @@
-import User from "../models/User.ts";
+import User from "../models/User";
 import { StatusCodes } from "http-status-codes";
-import {
-  BadRequestError,
-  UnauthenticatedError,
-} from "../errors/custom-errors.ts";
+import { BadRequestError, UnauthenticatedError } from "../errors/custom-errors";
 import { Request, Response } from "express";
 
 async function register(req: Request, res: Response) {
